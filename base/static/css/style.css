@@ -1,0 +1,264 @@
+body {
+    background-image: URL('/static/img/background-new.jpg');
+    background-color: #12110F;
+    background-position: top center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow-y: scroll;
+}
+
+body>div.container {
+    background-color: #12110F;
+    padding: 20px;
+    padding-top: 10px;
+    width: 1056px;
+    position: relative;
+    min-height: 600px;
+}
+
+.navbar .nav li a {
+    color: #FF8B26 !important;
+}
+
+.navbar .container {
+    width: 1050px;
+    margin: 0px auto;
+}
+
+.navbar {
+    z-index: 20;
+}
+
+.navbar .navbar-inner {
+    border-radius: 0px;
+}
+
+.top-bar {
+    height: 90px;
+    padding-top: 10px;
+    background: #49473e;
+    background: -moz-linear-gradient(top, #49473e 7%, #424242 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(7%, #49473e), color-stop(100%, #424242));
+    background: -webkit-linear-gradient(top, #49473e 7%, #424242 100%);
+    background: -o-linear-gradient(top, #49473e 7%, #424242 100%);
+    background: -ms-linear-gradient(top, #49473e 7%, #424242 100%);
+    background: linear-gradient(top, #49473e 7%, #424242 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#49473e', endColorstr='#424242', GradientType=0);
+    text-align: center;
+}
+
+.top-bar-inner {
+    position: relative;
+    width: 1050px;
+    margin: 0px auto;
+}
+
+.top-bar form {
+    margin: 0px !important;
+}
+
+.top-bar input {
+    padding: 10px;
+}
+
+.navbar .form-login {
+    padding: 20px;
+    margin: 0px;
+}
+
+div.upper-blocks {
+    width: 1080px;
+    height: 155px;
+    position: relative;
+    margin: 0px auto;
+    margin-top: -17px;
+    margin-left: -20px;
+}
+
+div.left-block {
+    width: 480px;
+    height: 145px;
+    float: left;
+    padding: 10px;
+}
+
+div.right-block {
+    width: 480px;
+    height: 135px;
+    float: right;
+    padding: 10px;
+}
+
+div.logo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 10px;
+}
+
+div.logo img {
+    width: 200px;
+}
+
+div.social-bar {
+    position: absolute;
+    top: 0px;
+    left: 800px;
+}
+
+div.social-bar .google {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
+div.social-bar .facebook {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+
+div.social-bar .twitter {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+}
+
+input#home-battletag {
+    padding: 10px;
+}
+
+div#battletag-container {
+    float: right;
+    position: relative;
+    padding-top: 15px;
+    width: 382px;
+}
+
+div#login {
+    padding: 10px;
+}
+
+div.footer-background {
+    width: 100%;
+    height: 603px;
+    position: absolute;
+    bottom: -103px;
+    margin-top: 163px;
+    z-index: -10;
+}
+
+div.footer {
+    width: 100%;
+    height: 73px;
+    background-image: URL('/static/img/footer-background.jpg');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+    position: absolute;
+    margin-top: 103px;
+    z-index: -10;
+    text-align: center;
+    padding-top: 20px;
+}
+
+div.hireling {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    float: right;
+}
+
+div.hireling div.neck {
+    position: absolute;
+    top: 0px;
+    left: 147px;
+}
+
+div.hireling div.leftFinger {
+    position: absolute;
+    top: 80px;
+    left: 75px;
+}
+
+div.hireling div.rightFinger {
+    position: absolute;
+    top: 80px;
+    left: 147px;
+}
+
+div.hireling div.mainHand {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+}
+
+div.hireling div.offHand {
+    position: absolute;
+    top: 10px;
+    left: 220px;
+}
+
+div.hireling div.special {
+    position: absolute;
+    top: 0px;
+    left: 75px;
+}
+
+div.user-heroes {
+    position: absolute;
+    top: 75px;
+    width: 400px;
+    height: 50px;
+    overflow: hidden;
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    background-color: #ffffff;
+    padding: 5px;
+    box-shadow: 0px 0px 3px #d8d8d8;
+    z-index: 10;
+}
+
+div.user-heroes i {
+    cursor: pointer;
+}
+
+div.user-hero {
+    height: 40px;
+    width: 350px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+div.user-hero img {
+    float: left;
+}
+
+div.user-hero h3 {
+    margin-top: 8px;
+}
+
+.hardcore-red {
+    color: #8b0000;
+}
+
+a.hardcore-red:hover {
+    color: red;
+}
+
+td .icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: -6px;
+    margin-top: -6px;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    width: auto;
+    height: auto;
+}
+
+.icon {
+    width: 14px;
+    height: 14px;
+}

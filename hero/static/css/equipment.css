@@ -1,0 +1,252 @@
+div.equipment {
+    width: 307px;
+    height: 423px;
+    position: relative;
+}
+
+div.equipment div {
+    overflow: hidden;
+}
+
+div.equipment img {
+    margin: auto;
+    display: table-cell;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+div.equipment div.slot-head {
+    position: absolute;
+    top: 7px;
+    left: 125px;
+    width: 60px;
+    height: 60px;
+}
+
+div.equipment div.slot-head img {
+    top: -29px;
+    bottom: -29px;
+}
+
+div.equipment div.slot-shoulders {
+    position: absolute;
+    top: 29px;
+    left: 43px;
+    width: 60px;
+    height: 82px;
+}
+
+div.equipment div.slot-shoulders img {
+    top: -18px;
+    bottom: -18px;
+}
+
+div.equipment div.slot-neck {
+    position: absolute;
+    top: 50px;
+    left: 209px;
+    width: 49px;
+    height: 49px;
+}
+
+div.equipment div.slot-torso {
+    position: absolute;
+    top: 75px;
+    left: 117px;
+    width: 77px;
+    height: 109px;
+}
+
+div.equipment div.slot-torso img {
+    top: -22px;
+    bottom: -22px;
+}
+
+div.equipment div.slot-hands {
+    position: absolute;
+    top: 128px;
+    left: 18px;
+    width: 59px;
+    height: 82px;
+}
+
+div.equipment div.slot-hands img {
+    top: -17px;
+    bottom: -17px;
+}
+
+div.equipment div.slot-bracers {
+    position: absolute;
+    top: 128px;
+    left: 233px;
+    width: 59px;
+    height: 82px;
+}
+
+div.equipment div.slot-bracers img {
+    top: -17px;
+    bottom: -17px;
+}
+
+div.equipment div.slot-waist {
+    position: absolute;
+    top: 194px;
+    left: 117px;
+    width: 77px;
+    height: 28px;
+}
+
+div.equipment div.slot-waist img {
+    top: -16px;
+    bottom: -16px;
+}
+
+div.equipment div.slot-leftFinger {
+    position: absolute;
+    top: 228px;
+    left: 29px;
+    width: 36px;
+    height: 36px;
+}
+
+div.equipment div.slot-rightFinger {
+    position: absolute;
+    top: 228px;
+    left: 245px;
+    width: 36px;
+    height: 36px;
+}
+
+div.equipment div.slot-legs {
+    position: absolute;
+    top: 232px;
+    left: 125px;
+    width: 60px;
+    height: 82px;
+}
+
+div.equipment div.slot-legs img {
+    top: -18px;
+    bottom: -18px;
+}
+
+div.equipment div.slot-mainHand {
+    position: absolute;
+    top: 282px;
+    left: 18px;
+    width: 59px;
+    height: 124px;
+}
+
+div.equipment div.slot-feet {
+    position: absolute;
+    top: 324px;
+    left: 125px;
+    width: 60px;
+    height: 82px;
+}
+
+div.equipment div.slot-feet img {
+    top: -18px;
+    bottom: -18px;
+}
+
+div.equipment div.slot-offHand {
+    position: absolute;
+    top: 282px;
+    left: 233px;
+    width: 59px;
+    height: 124px;
+}
+
+div.slot {
+    border-radius: 3px;
+}
+
+.color-gray {
+    background-color: rgba(128, 128, 128, 0.3);
+    border: 1px solid #888888;
+}
+
+.color-white {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid #ffffff;
+}
+
+.color-blue {
+    background-color: rgba(105, 105, 255, 0.3);
+    border: 1px solid #6969FF;
+}
+
+.color-yellow {
+    background-color: rgba(230, 230, 0, 0.3);
+    border: 1px solid #ffff00;
+}
+
+.color-green {
+    background-color: rgba(0, 255, 0, 0.3);
+    border: 1px solid #00ff00;
+}
+
+.color-orange {
+    background-color: rgba(191, 100, 47, 0.3);
+    border: 1px solid #BF642F;
+}
+
+.color-red {
+    background-color: rgba(255, 25, 25, 0.3);
+    border: 1px solid #FF2222;
+}
+
+div.equipment-background-barbarian-male {
+    background-image: url('/static/img/equipment-backgrounds/barbarian-male.jpg');
+    background-repeat: no-repeat;
+}
+
+div.equipment-background-barbarian-female {
+    background-image: url('/static/img/equipment-backgrounds/barbarian-female.jpg');
+    background-repeat: no-repeat;
+}
+
+div.equipment-background-monk-male {
+    background-image: url('/static/img/equipment-backgrounds/monk-male.jpg');
+    background-repeat: no-repeat;
+}
+
+div.equipment-background-monk-female {
+    background-image: url('/static/img/equipment-backgrounds/monk-female.jpg');
+    background-repeat: no-repeat;
+}
+
+div.equipment-background-wizard-male {
+    background-image: url('/static/img/equipment-backgrounds/wizard-male.jpg');
+    background-repeat: no-repeat;
+}
+
+div.equipment-background-wizard-female {
+    background-image: url('/static/img/equipment-backgrounds/wizard-female.jpg');
+    background-repeat: no-repeat;
+}
+
+div.equipment-background-witch-doctor-male {
+    background-image: url('/static/img/equipment-backgrounds/witch-doctor-male.jpg');
+    background-repeat: no-repeat;
+}
+
+div.equipment-background-witch-doctor-female {
+    background-image: url('/static/img/equipment-backgrounds/witch-doctor-female.jpg');
+    background-repeat: no-repeat;
+}
+
+div.equipment-background-demon-hunter-male {
+    background-image: url('/static/img/equipment-backgrounds/demon-hunter-male.jpg');
+    background-repeat: no-repeat;
+}
+
+div.equipment-background-demon-hunter-female {
+    background-image: url('/static/img/equipment-backgrounds/demon-hunter-female.jpg');
+    background-repeat: no-repeat;
+}

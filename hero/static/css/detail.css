@@ -1,0 +1,35 @@
+.skill-active {
+    height: 55px;
+    width: 200px;
+    float: left;
+}
+
+.skill-active img {
+    margin-right: 10px;;
+}
+
+.skill-active a {
+    display: block;
+}
+
+.skill-passive {
+    height: 55px;
+    width: 200px;
+    float: left;
+}
+
+.skill-passive img {
+    margin-right: 10px;;
+}
+
+.skill-passive a {
+    display: block;
+}
+
+.skill-passive h4 {
+    margin-top: 10px;
+}
+
+.ad {
+    margin-top: 15px;
+}

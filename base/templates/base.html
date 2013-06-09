@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+
+        <link href="/static/css/bootstrap.css" rel="stylesheet">
+        <link href="/static/css/bootstrap-extended.css" rel="stylesheet">
+        <link href="/static/css/style.css" rel="stylesheet">
+        <link href="/static/css/colors.css" rel="stylesheet">
+
+        {% block css %}
+
+        {% endblock %}
+    </head>
+    <body>
+        {% include 'base/top_bar.html' %}
+        {% include 'base/nav_bar.html' %}
+    <div class="container">
+        {% block header %}
+
+        {% endblock %}
+        {% block content %}
+
+        {% endblock %}
+        <footer>
+            <hr>
+            <p>
+                © 2013 Diabloheroes - <a href="mailto:info@diabloheroes.com" target="_blank">Contact</a> - <a href="/page/view/privacy">Privacy</a> - <a href="/page/view/disclaimer">Disclaimer</a> - <a href="/page/view/terms-of-use">Terms of use</a>
+            </p>
+            <p>
+                Diablo© and Blizzard Entertainment© are all trademarks or registered trademarks of Blizzard Entertainment in the United States and/or other countries.
+                These terms and all related materials, logos, and images are copyright © Blizzard Entertainment. This site is in no way associated with or endorsed by Blizzard Entertainment©
+            </p>
+        </footer>
+    </div>
+    </body>
+</html>

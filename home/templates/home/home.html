@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <div class="page-header">
+        <h1>World's best heroes</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="page-header">
+                <h3>Ranklists</h3>
+            </div>
+            <ul class="nav nav-list bs-docs-sidenav affix-top">
+                {% for category in categories %}
+                    <li>{{ category.0 }}</li>
+
+                    {% for ranklist in category.1 %}
+                        <li>
+                            <a href="{% url 'home.ranklist' ranklist.stat %}">{{ ranklist.name }}</a>
+                        </li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="span10">
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="page-header">
+                        <h3>Softcore</h3>
+                    </div>
+                    <table class="table table-lined table-striped">
+                        <tbody>
+                        {% for hero in softcore %}
+                            <tr>
+                                <td width="10">
+                                    #{{ forloop.counter }}
+                                </td>
+                                <td class="overflow-x">
+                                    <img src="{{ STATIC_URL }}{{ hero.icon }}" class="icon">
+                                    <a href="{{ hero.url }}">{{ hero.name }}</a>
+                                </td>
+                                <td width="55">
+                                    <span class="open-tooltip"
+                                          data-original-title="Normal level">{{ hero.level }}</span> <span
+                                        class="open-tooltip paragon"
+                                        data-original-title="Paragon level">({{ hero.paragon_level }})</span>
+                                </td>
+                                <td width="50">
+                                    <span class="witch-doctor">{{ hero.klass.abbreviation }}</span>
+                                </td>
+                                <td width="50">
+                                    {{ hero.dps }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="span6">
+                    <div class="page-header">
+                        <h3>Hardcore</h3>
+                    </div>
+                    <table class="table table-lined table-striped">
+                        <tbody>
+                        {% for hero in hardcore %}
+                            <tr>
+                                <td width="10">
+                                    #{{ forloop.counter }}
+                                </td>
+                                <td class="overflow-x">
+                                    <img src="{{ STATIC_URL }}{{ hero.icon }}" class="icon">
+                                    <a href="{{ hero.url }}">{{ hero.name }}</a>
+                                </td>
+                                <td width="55">
+                                    <span class="open-tooltip"
+                                          data-original-title="Normal level">{{ hero.level }}</span> <span
+                                        class="open-tooltip paragon"
+                                        data-original-title="Paragon level">({{ hero.paragon_level }})</span>
+                                </td>
+                                <td width="50">
+                                    <span class="witch-doctor">{{ hero.klass.abbreviation }}</span>
+                                </td>
+                                <td width="50">
+                                    {{ hero.dps }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

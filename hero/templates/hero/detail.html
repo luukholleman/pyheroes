@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link href="{{ STATIC_URL }}css/detail.css" rel="stylesheet" media="screen"/>
+    <link href="{{ STATIC_URL }}css/equipment.css" rel="stylesheet" media="screen"/>
+    <link href="{{ STATIC_URL }}css/hero.css" rel="stylesheet" media="screen"/>
+    <link href="{{ STATIC_URL }}css/paragon.css" rel="stylesheet" media="screen"/>
+{% endblock %}
+
+{% block header %}
+    <div class="page-header">
+        <div class="paragon-icon">
+            <div class="paragon-banner paragon-banner-tier-5"></div>
+            <div class="paragon-background paragon-background-tier-4"></div>
+            <div class="paragon-ring paragon-ring-tier-11"></div>
+            <div class="paragon-hero">
+                <img src="{{ STATIC_URL }}{{ hero.icon }}" width="45"></div>
+        </div>
+        <h1>
+            {{ hero.name }}
+            <br/>
+            <small>
+                {{ hero.career.name }}
+            </small>
+        </h1>
+        <p>
+            Level {{ hero.level }}
+            {% if hero.level >= 60 %}
+                <span class="paragon">({{ hero.paragon_level }})</span>
+            {% endif %}
+
+            <span class="{{ hero.klass.slug }}">{{ hero.klass.name }}</span>
+            <br/>
+            <span class="{{ hero.mode_slug }}">{{ hero.mode }}</span> {{ hero.get_region_display }} </p>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row-fluid">
+    <div class="span2">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+            <li class="nav-header">Hero information</li>
+
+            <li class="active"><a href="/profile/hero/aveley2218/23407878">Overview</a></li>
+            <li><a href="{% url 'hero.ranks' hero.id hero.career.slug hero.blizzard_id %}">Ranks</a></li>
+            <li><a href="{% url 'hero.stats' hero.id hero.career.slug hero.blizzard_id %}">Stats</a></li>
+
+            <li><a href="{{ hero.battle_net_url }}" target="_blank"
+                   class="open-tooltip" data-original-title="Will open in a new tab">Bnet Armory</a></li>
+
+            <li class="divider"></li>
+
+            <li class="nav-header exocet-light">{{ hero.get_region_display }}</li>
+            <li class="overflow-x active">
+                {% for other_hero in hero.career.hero_set.all %}
+                    <a href="{{ other_hero.url }}" class="open-tooltip"
+                       data-original-title="Level {{ hero.level }}
+                            {% if hero.level >= 60 %}
+                                ({{ hero.paragon_level }})
+                            {% endif %}
+                             {{ hero.mode }} {{ hero.klass.name }}">
+                        <span class="{{ hero.mode_slug }}">{{ hero.level }}</span>
+                        {% if hero.level >= 60 %}
+                            <span class="paragon">({{ hero.paragon_level }})</span>
+                        {% endif %}
+                        <span class="{{ hero.klass.slug }}">{{ hero.name }}</span>
+                    </a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    <div class="span8">
+        <div class="row-fluid">
+            <div class="span6">
+                <h2 class="exocet-light">Equipment</h2>
+                <hr>
+                <div class="well">
+                    <div class=" equipment-background-wizard-female">
+                        <div class="equipment">
+                            <div class="color-yellow slot-neck">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CkEIiaDGqQESBwgEFazFRGQd429Rkx0PXPT8Hcz87sgdBVbV7h3g571iIgsIARVvQgMAGBggFjAJOMIBQABQDmD9AxjYlqbEDFAEWAI">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/amulet13_demonhunter_male.png">
+                                </a>
+                            </div>
+                            <div class="color-orange slot-mainHand">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/Cl8Iz9nm2gkSBwgEFYfOREwd7TrCNh0Bff5lHTbMOzodInZY6x3Ew4J0HWdZF7UwCTh2QABQEmC_AmolCgwIABDl_tGqgYCAoD4SFQj_19TtCRIHCAQVG5aumDANOABAARiOuqbECVAEWAI">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/unique_wand_013_104_wizard_female.png">
+                                </a>
+                            </div>
+                            <div class="color-yellow slot-offHand">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CmwI5vTmhw4SBwgEFdjDjnEdlL80ih2sbH_9HRJshc0dPCtv8R228ewaHcWsHqYiCwgBFWxCAwAYECAmMAk4cUAAUBBgtAJqJQoMCAAQpOPwyIGAgIA2EhUIwLekzw0SBwgEFbVdtnowCTgAQAEYsI_2mA5QBFgC">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/orb_204_wizard_female.png">
+                                </a>
+                            </div>
+                            <div class="color-yellow slot-waist">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CkEIg9--hwoSBwgEFbynQtQd_0qFgR3QNNiIHbJX1e4dSlF0dR34ucU_IgsIARW1RAMAGBYgHjAJOJgBQABQDmCXAxiH4eq7BVAEWAI">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/belt_204_wizard_male.png">
+                                </a>
+                            </div>
+                            <div class="color-yellow slot-rightFinger">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CkEI8OTWgA4SBwgEFTNVXUQdKRJz4B3_SoWBHZQ947kdP0ceDB0MAz6LIgsIABWq_gEAGBggADAJOMkBQABQDGCQBBjm1OrFCFAEWAI">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/ring_22_demonhunter_male.png">
+                                </a>
+                            </div>
+                            <div class="color-yellow slot-leftFinger">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CkEI4LKfqgESBwgEFTNVXUQdA-y9Cx0_Rx4MHYvxP_sdtwRpuh0pEnPgIgsIARVsQgMAGAggGDAJOIkBQABQDmDwAhjm1OrFCFAEWAI">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/ring_22_demonhunter_male.png">
+                                </a>
+                            </div>
+                            <div class="color-yellow slot-legs">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CpABCITn1a8DEgcIBBWaktWlHfi5xT8dr1PDNh0pEnPgHc4hGuodt_HsGiILCAAVrf4BABggIAowCTjBAUAASAtQDmCCBGokCgwIABCb5N7UgICAwA8SFAj7s4YqEgcIBBW1XbZ6MAk4AEABaiUKDAgAEJ_k3tSAgIDADxIVCMXc-rUGEgcIBBW1XbZ6MAk4AEABGMu106ILUARYAg">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/pants_203_wizard_male.png">
+                                </a>
+                            </div>
+                            <div class="color-yellow slot-hands">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CkgI3ruk1QUSBwgEFcZbkqQduNItxh0D7L0LHRBc9PwdlQJtrR0eF1qjHRJW1e4iCwgAFar-AQAYKCAWMA048wFAAEgMUBBgggUY85DttgtQBFgC">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/gloves_205_wizard_male.png">
+                                </a>
+                            </div>
+                            <div class="color-green slot-torso">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CqoBCJDz0qQEEgcIBBW1fCseHTodKCoduk34Kh11sezwHdA02IgdeiR_Sh2TAmPqMAk4kwFAAFASYIwDaiUKDAgAEOKRvvyAgICAJBIVCM3r_MUKEgcIBBXOXbZ6MAk4AEABaiUKDAgAEPqRvvyAgICAJBIVCIDkgcMKEgcIBBXOXbZ6MAk4AEABaiEKDAgAEKic1MOCgICgHRIRCAASBwgEFc5dtnowCTgAQAEY6vLb4gNQBFgCoAHq8tviAw">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/unique_chest_014_104_wizard_female.png">
+                                </a>
+                            </div>
+                            <div class="color-orange slot-bracers">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CjgI4rKOzQQSBwgEFY2__hcdtwRpuh0pEnPgHVQgyq4dzLstgB0K6lAIHXWx7PAwCThdQABQEmCOAhia_vX_AlAEWAI">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/unique_bracer_005_104_demonhunter_male.png">
+                                </a>
+                            </div>
+                            <div class="color-yellow slot-head">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CmsIgtvfmA8SBwgEFXz5Tl0doIETrh2GAmPqHQZ9lkEdDlz0_B2yV9XuHWgOF3UiCwgBFYpCAwAYIiAkMAk4wQFAAEgDUBBgiARqIQoMCAAQsKXGk4GAgIAeEhEIABIHCAQVYvWLXzAJOABAARj45ffUC1AEWAI">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/helm_205_wizard_male.png">
+                                </a>
+                            </div>
+                            <div class="color-orange slot-shoulders">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CjgItNyv1w8SBwgEFaJwVPEdDVLdrB2E6UsMHcTDgnQdwmqbER0o_n0BHVtOgMkwCThvQABQEmC4Ahi7vdzqAVAEWAI">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/unique_shoulder_003_104_demonhunter_male.png">
+                                </a>
+                            </div>
+                            <div class="color-yellow slot-feet">
+                                <a href="#" onclick="return false;"
+                                   data-d3tooltip="item/CkgIqMfy2gcSBwgEFZ1Fm38dR_GUPx0pEnPgHQZUBRcddk8MNR0K6lAIHTwrb_EiCwgBFW9CAwAYGCAEMA044QFAAEgBUBBgzAQYupba-Q9QBFgC">
+                                    <img src="http://us.media.blizzard.com/d3/icons/items/large/boots_205_wizard_male.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span6">
+                <h2 class="exocet-light">Stats and ranks</h2>
+                <hr>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th width="120">
+                        </th>
+                        <th>
+                            <h4>Value</h4>
+                        </th>
+                        <th>
+                            <h4>Rank</h4>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <h4>
+                                Heroscore <i class="icon icon-question-sign icon-white open-tooltip"
+                                             data-original-title="Heroscore is a score calculated by the heroes' gear. The max score is 10k and can only be reached with perfect roll gear. Note: legendaries and paragon levels may push heroscore over 10k, as these will give you stats you normally can't get."></i>
+                            </h4>
+                        </td>
+                        <td width="100">
+                            3,732
+                        </td>
+                        <td width="100">
+                            # 6397
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>
+                                DPS <i class="icon icon-question-sign icon-white open-tooltip"
+                                       data-original-title="DPS includes buffs but only those that the player could keep up all the time. For example: Magic weapon is included but Archon is not."></i>
+                            </h4>
+                        </td>
+                        <td width="100">
+                            61,522
+                        </td>
+                        <td width="100">
+                            # 9138
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>
+                                Elite kills </h4>
+                        </td>
+                        <td width="100">
+                            1,556
+                        </td>
+                        <td width="100">
+                            # 14913
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>
+                                Armor </h4>
+                        </td>
+                        <td width="100">
+                            3,110
+                        </td>
+                        <td width="100">
+                            # 14600
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>
+                                Strength </h4>
+                        </td>
+                        <td width="100">
+                            319
+                        </td>
+                        <td width="100">
+                            # 11434
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>
+                                Intelligence </h4>
+                        </td>
+                        <td width="100">
+                            1,997
+                        </td>
+                        <td width="100">
+                            # 3309
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>
+                                Dexterity </h4>
+                        </td>
+                        <td width="100">
+                            271
+                        </td>
+                        <td width="100">
+                            # 14878
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>
+                                Vitality </h4>
+                        </td>
+                        <td width="100">
+                            910
+                        </td>
+                        <td width="100">
+                            # 9065
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <a href="/profile/stats/aveley2218/23407878" class="pull-right">Detailed stats</a>
+                        </td>
+                        <td>
+                            <a href="/profile/ranks/aveley2218/23407878" class="pull-right">Detailed ranks</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
